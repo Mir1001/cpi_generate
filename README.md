@@ -3,10 +3,12 @@
 Example of input text.
  
 ```
-IV	V	VI	ParentID	ID	Tag	Description
-X	X		OD	OD	Operativna dela
-X	X	OD	OD.1	1	Načrtuje, organizira in analizira delo (splošne naloge)
-X	X	OD.1	OD.1.1	1	načrtuje, pripravlja in zagotavlja ustrezen potek lastnega dela ob upoštevanju delovnega naloga, delovnih (tehničnih) navodil ter organizacijskih in informacijskih danosti
-X	X	OD.1	OD.1.2	2	določi čas, potreben za izvedbo delovne naloge na osnovi delovnega naloga in normativov z 
+Področja del	Ključna dela	Znanja in spretnosti
+ANOD: Analiza, načrtovanje in organizacija dela
+ 	ANOD.1: sprejema in pregleda tehnično dokumentacijo in delovni načrt in skladno z njim načrtuje svoje delo ali delo manjše skupine
+ 	 	ANOD.1.1: pozna principe organizacije dela
+ 	 	ANOD.1.2: sprejme pisna in ustna navodila za delo ter skladno z njimi načrtuje svoje delo skupine
+ 	 	ANOD.1.3: pozna normative časa za izvedbo posameznih nalog 
+ 	 	ANOD.1.4: oceni čas, potreben za izvedbo delovne naloge na osnovi normativov
  
 ```
