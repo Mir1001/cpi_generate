@@ -124,13 +124,12 @@ function generateHTMLTable(type) {
   var table = "";
   if (type == 1)
     table = generateTablesByCourse(csvParse);
-  else
-    if (type == 3)
-      table = generateTablesByDK(csvParse);
-    else
-      if (type == 2)
-        for (let y = 1; y <= 9; y++)
-          table += generateTablesByYear(csvParse, y);
+  if (type == 3)
+    table = generateTablesByDK(csvParse);
+
+  if (type == 2)
+    for (let y = 1; y <= 9; y++)
+      table += generateTablesByYear(csvParse, y);
   //csvParse.forEach(myFunctionDict); //fill dict
 
   document.getElementById("resultTable").innerHTML = table;
