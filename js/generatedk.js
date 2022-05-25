@@ -137,15 +137,33 @@ function generateHTMLTable(type) {
   selectElementContents(document.getElementById("resultTable")); //selects and copy on clipboard
 }
 
-function getDataText(){
+function getDataText(typeP){
   // read text from URL location
   var request = new XMLHttpRequest();
-  request.open('GET', 'http://www.puzzlers.org/pub/wordlists/pocket.txt', true);
+  request.open('GET', 'https://mir1001.github.io/cpi_generate/dk.txt', true);
   request.send(null);
+  console.log("Izbran tip:"+typeP)
   request.onreadystatechange = function () {
       if (request.readyState === 4 && request.status === 200) {
           var type = request.getResponseHeader('Content-Type');
           if (type.indexOf("text") !== 1) {
+            console.log(request.responseText);
+            var csvParse = CSVToArray(request.responseText, "\t");
+            myFillHeadData(csvParse);
+            console.log(csvParse);
+            var table = "";
+            if (typeP == 1)
+              table = generateTablesByCourse(csvParse);
+              if (typeP == 3)
+              table = generateTablesByDK(csvParse);
+          
+            if (typeP == 2)
+              for (let y = 1; y <= 9; y++)
+                table += generateTablesByYear(csvParse, y);
+            //csvParse.forEach(myFunctionDict); //fill dict
+            document.getElementById("resultTable").innerHTML = table;
+          
+          
               return request.responseText;
           }
       }
