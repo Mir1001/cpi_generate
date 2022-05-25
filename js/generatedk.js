@@ -50,7 +50,63 @@ function generateTablesByCourse(csvParse) {
   return table;
 }
 
-function generateHTMLTable() {
+function generateTablesByYear(csvParse, year) {
+  console.log("Generate tables " + csvParse[0].length);
+  var table = "";
+  let current = "";
+  var tmp = "";
+  table += '<h2>' + year + '. razred</h2>\n<table>\n';
+  table += "<table>";
+  table += "<tr><th>Predmet</th><th>DK</th><th>Opis</th><th>Raven</th></tr>\n";
+  for (let i = 4; i < csvParse[0].length; i++) {
+    if (csvParse[1][i] == year) {
+      current = csvParse[0][i];
+      for (let j = 3; j < csvParse.length; j++) {
+        if (csvParse[j][i] > 0) {
+          table += "<tr>";
+          tmp = csvParse[0][i];
+          table += "<td>" + tmp + "</td>";
+          table += "<td>" + csvParse[j][0] + "</td>";
+          table += "<td>" + csvParse[j][1] + "</td>";
+          table += "<td>" + csvParse[j][i] + "</td>";
+          console.log(csvParse[j][i]);
+          table += "</tr>\n";
+        }
+      }
+    }
+  }
+  table += "</table>"; //ENDOld
+
+  return table;
+}
+
+//Pa izpis po posamezni kompetenci (po nivojih, v katerem razredu, pri katerem predmetu)
+function generateTablesByDK(csvParse) {
+  var table = "";
+  let current = "";
+  let newTable = false;
+  for (let i = 3; i < csvParse.length; i++) {
+
+    table += '<h2>' + csvParse[i][0] + " - " + csvParse[i][1] + '</h2>\n<table>\n';
+    table += "<tr><th>Razred</th><th>Predmet</th><th>Raven</th></tr>\n";
+    for (let y = 1; y <= 9; y++)
+      for (let j = 4; j < csvParse[i].length; j++) {
+        if (csvParse[1][j] == y) { //sort by y
+          if (csvParse[i][j] > 0) {
+            table += "<tr>";
+            table += "<td>" + csvParse[1][j] + "</td>";
+            table += "<td>" + csvParse[0][j] + "</td>";
+            table += "<td>" + csvParse[i][j] + "</td>";
+            table += "</tr>\n";
+          }
+        }
+      }
+    table += "</table>\n"; //ENDOld
+  }
+  return table;
+}
+
+function generateHTMLTable(type) {
   var csvData = //tmp format data
     "ID	Digitalna kompetenca	SUM	MAX	SLJ - Slovenščina 									MAT - Matematika 									Tuj jezik								LUM - Likovna umetnost									GUM - Glasbena umetnost 									DRU - Družba 		GEO - Geografija				ZGO - Zgodovina 				DKE - Državljanska kultura in etika 		SPO - Spoznavanje okolja 			FIZ - Fizika 		KEM - Kemija 		BIO - Biologija 		NAR - Naravoslovje 		NIT - Naravoslovje in tehnika 		TIT - Tehnika in tehnologija			GOS - Gospodinjstvo 		ŠPO - Šport 								" +
     "\n	Razred			1	2	3	4	5	6	7	8	9	1	2	3	4	5	6	7	8	9	2	3	4	5	6	7	8	9	1	2	3	4	5	6	7	8	9	1	2	3	4	5	6	7	8	9	4	5	6	7	8	9	6	7	8	9	7	8	1	2	3	8	9	8	9	8	9	6	7	4	5	6	7	8	5	6	1	2	3	4	5	6	7	8	9" +
@@ -65,11 +121,20 @@ function generateHTMLTable() {
   var csvParse = CSVToArray(csvData, "\t");
   myFillHeadData(csvParse);
   console.log(csvParse);
-  var table = generateTablesByCourse(csvParse);
+  var table = "";
+  if (type == 1)
+    table = generateTablesByCourse(csvParse);
+  else
+    if (type == 3)
+      table = generateTablesByDK(csvParse);
+    else
+      if (type == 2)
+        for (let y = 1; y <= 9; y++)
+          table += generateTablesByYear(csvParse, y);
   //csvParse.forEach(myFunctionDict); //fill dict
 
   document.getElementById("resultTable").innerHTML = table;
   console.log(table);
   selectElementContents(document.getElementById("resultTable")); //selects and copy on clipboard
-
 }
+

@@ -11,12 +11,16 @@
 <body>
   <link rel="stylesheet" href="styles.css" />
 
-  <h2>Generiraj tabel po razredih</h2>
-  <button type="button" id="btnGenerate" onclick="generateHTMLTable()">
-    Generiraj tabelo in jo samodejno prilepi na odlagališče
+  <h2>Generiraj tabelo</h2>
+  <button type="button" id="btnGenerate" onclick="generateHTMLTable(1)">
+    Po PREDMETIH 
   </button>
-
-
+  <button type="button" id="btnGenerate" onclick="generateHTMLTable(2)">
+    Po RAZREDIH
+  </button>
+  <button type="button" id="btnGenerate" onclick="generateHTMLTable(3)">
+    Po DK
+  </button>
   <br />
   <label for="lname">Prilepi formatiran katalog v spodnje okno (tab seperator)</label><br />
   <textarea name="Text1" id="taCSV" cols="120rem" rows="12rem"> </textarea><br /><br />
@@ -24,7 +28,7 @@
   <p id="resultTable">Nekaj</p>
 </body>
 <script>
-  generateHTMLTable();
+  generateHTMLTable(3);
 </script>
 
 </html>
