@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>CPI Oblikuj poklicni standard</title>
+    <script type="text/javascript" src="js/util.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/generate.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <link rel="stylesheet" href="styles.css" />
+
+    <h2>Generiraj tabelo za poklicni standard</h2>
+
+    <label>Izberi raven: <input list="levelID" id="selectedLevelID" name="dlLevel" value="V" /></label>
+    <datalist id="levelID">
+      <option value="IV">IV</option>
+      <option value="V">V</option>
+      <option value="VI">VI</option>
+    </datalist>
+
+    <br />
+    <input type="checkbox" id="idUseCode" name="cbIdent" checked="checked" value="1" />
+    <label for="ident">Uporaba identifikacijske značke</label><br />
+    <label for="lname">Prilepi formatiran katalog v spodnje okno (tab seperator)</label><br />
+    <textarea name="Text1" id="taCSV" cols="140rem" rows="8rem"> </textarea><br /><br />
+
+    <button
+      type="button"
+      id="btnGenerate"
+      onclick="generateHTMLTable(document.getElementById(`selectedLevelID`).value, document.getElementById(`idUseCode`).checked)"
+    >
+      Generiraj tabelo in jo prilepi na odlagališče
+    </button>
+
+    <p id="resultTable">Nekaj</p>
+  </body>
+  <script>
+    generateHTMLTable(document.getElementById("selectedLevelID").value, document.getElementById("idUseCode").checked);
+  </script>
+</html>
