@@ -1,0 +1,24 @@
+ID	Digitalna kompetenca	SUM	MAX	SLJ - Slovenščina 	MAT - Matematika 	TJ - Tuj jezik	LUM - Likovna umetnost	GUM - Glasbena umetnost 	GEO - Geografija	ZGO - Zgodovina 	FIZ - Fizika 	KEM - Kemija 	BIO - Biologija 	ŠPO - Šport 	x-predmet	x1-predmet	x2-predmet	x3-predmet	x4-predmet
+	Razred			4	4	4	4	4	4	4	4	4	4	4	4	4	4	4	4
+	Count			2	2	3	2	3	2	2	1	1	1	1	2	1	1	1	1
+1.1	Brskanje, iskanje in izbira podatkov, informacij in digitalnih vsebin	1	1	1															
+1.2	Vrednotenje podatkov, informacij in digitalnih vsebin	1	1		1														
+1.3	Upravljanje s podatki, informacijami in digitalnimi vsebinami	1	1			1													
+2.1	Sporazumevanje z uporabo digitalnih tehnologij	1	1				1												
+2.2	Deljenje z uporabo digitalnih tehnologij	2	1					1	1										
+2.3	Državljanstvo z uporabo digitalnih tehnologij	1	1							1									
+2.4	Sodelovanje z uporabo digitalnih tehnologij	1	3	3															
+2.5	Spletni bonton	2	3		3	3													
+2.6	Upravljanje z digitalno identiteto	3	3			3	3	3											
+3.1	Razvoj digitalnih vsebin	4	3					3	3	3	3								
+3.2	Umeščanje in poustvarjanje digitalnih vsebin	1	3									3							
+3.3	Avtorske pravice in licence	1	3										3						
+3.4	Programiranje	2	3											3	3				
+4.1	Varovanje naprav	3	3												3	3	3	3	3
+4.2	Varovanje osebnih podatkov in zasebnosti	0	0																
+4.3	Varovanje zdravja in dobrega počutja	0	0																
+4.4	Varovanje okolja	0	0																
+5.1	Reševanje tehničnih težav	0	0																
+5.2	Prepoznavanje potreb in tehnoloških zadreg	0	0																
+5.3	Ustvarjalna uporaba digitalnih tehnologij	0	0																
+5.4	Prepoznavanje digitalnih razkorakov	0	0																
