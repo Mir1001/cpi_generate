@@ -28,15 +28,14 @@ function generateTablesByCourse(csvParse) {
       if (newTable) table += "</table>"; //ENDOld
       newTable = true;
       table += "<h2>" + current + "</h2>\n<table>\n";
-      table +=
-        "<tr><th>Gimnazija</th><th>DK</th><th>Opis</th><th>Raven</th></tr>\n";
+      table += "<tr><th>DK</th><th>Opis</th><th>Raven</th></tr>\n";
       console.log("Head " + current);
     }
 
     for (let j = 3; j < csvParse.length; j++) {
       if (csvParse[j][i] > 0) {
         table += "<tr>";
-        table += "<td>" + csvParse[1][i] + "</td>";
+        //table += "<td>" + csvParse[1][i] + "</td>";
         table += "<td>" + csvParse[j][0] + "</td>";
         table += "<td>" + csvParse[j][1] + "</td>";
         table += "<td>" + csvParse[j][i] + "</td>";
@@ -89,19 +88,19 @@ function generateTablesByDK(csvParse) {
     table +=
       "<h2>" + csvParse[i][0] + " - " + csvParse[i][1] + "</h2>\n<table>\n";
     table += "<tr><th>Predmet</th><th>Raven</th></tr>\n";
-    for (let y = 1; y <= 3; y++)
-      for (let j = 4; j < csvParse[i].length; j++) {
-        if (csvParse[1][j] == y) {
-          //sort by y
-          if (csvParse[i][j] > 0) {
-            table += "<tr>";
-            //table += "<td>" + csvParse[1][j] + "</td>";
-            table += "<td>" + csvParse[0][j] + "</td>";
-            table += "<td>" + csvParse[i][j] + "</td>";
-            table += "</tr>\n";
-          }
-        }
+    //  for (let y = 1; y <= 3; y++)
+    for (let j = 4; j < csvParse[i].length; j++) {
+      //  if (csvParse[1][j] == y) {
+      //sort by y
+      if (csvParse[i][j] > 0) {
+        table += "<tr>";
+        //table += "<td>" + csvParse[1][j] + "</td>";
+        table += "<td>" + csvParse[0][j] + "</td>";
+        table += "<td>" + csvParse[i][j] + "</td>";
+        table += "</tr>\n";
       }
+    }
+    //  }
     table += "</table>\n"; //ENDOld
   }
   return table;
