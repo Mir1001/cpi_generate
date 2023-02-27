@@ -89,7 +89,7 @@ function generateTablesByDK(csvParse) {
     table +=
       "<h2>" + csvParse[i][0] + " - " + csvParse[i][1] + "</h2>\n<table>\n";
     table += "<tr><th>Triletje</th><th>Predmet</th><th>Raven</th></tr>\n";
-    for (let y = 1; y <= 9; y++)
+    for (let y = 1; y <= 3; y++)
       for (let j = 4; j < csvParse[i].length; j++) {
         if (csvParse[1][j] == y) {
           //sort by y
