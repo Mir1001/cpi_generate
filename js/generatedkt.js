@@ -139,12 +139,8 @@ function generateHTMLTable(type) {
 function getDataText(typeP) {
   // read text from URL location
   var request = new XMLHttpRequest();
-  request.open(
-    "GET",
-    "///Users/ferimac/Documents/CPI_RENGEN/cpi_generate/dkt.txt",
-    true
-  );
-  //request.open("GET", "//https://mir1001.github.io/cpi_generate/dkt.txt", true);
+
+  request.open("GET", "https://mir1001.github.io/cpi_generate/dkt.txt", true);
   request.send(null);
   console.log("Izbran tip:" + typeP);
   request.onreadystatechange = function () {
@@ -160,7 +156,7 @@ function getDataText(typeP) {
         if (typeP == 3) table = generateTablesByDK(csvParse);
 
         if (typeP == 2)
-          for (let y = 1; y <= 9; y++)
+          for (let y = 1; y <= 3; y++)
             table += generateTablesByYear(csvParse, y);
         //csvParse.forEach(myFunctionDict); //fill dict
         document.getElementById("resultTable").innerHTML = table;
