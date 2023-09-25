@@ -1,8 +1,8 @@
 ID	Digitalna kompetenca	SUM	MAX	SLJ - Slovenščina 			MAT - Matematika 			TJ - Tuj jezik			LUM - Likovna umetnost			GUM - Glasbena umetnost 			DRU - Družba 	GEO - Geografija		ZGO - Zgodovina 		DKE - Državljanska kultura in etika 	SPO - Spoznavanje okolja 	FIZ - Fizika 	KEM - Kemija 	BIO - Biologija 	NAR - Naravoslovje 		NIT - Naravoslovje in tehnika 	TIT - Tehnika in tehnologija		GOS - Gospodinjstvo 	ŠPO - Šport 		
 	VIO			1	2	3	1	2	3	1	2	3	1	2	3	1	2	3	2	2	3	2	3	3	1	3	3	3	2	3	2	2	3	2	1	2	3
-	Count			6	5	3	1	2	4	0	2	2	6	2	2	3	3	4	3	1	3	3	4	2	0	3	3	2	3	3	2	1	4	2	1	1	2
+	Count			6	6	4	1	2	4	0	3	2	6	2	2	3	3	4	3	1	3	3	4	2	0	3	3	2	3	3	2	1	4	2	1	1	2
 1.1	Brskanje, iskanje in izbira podatkov, informacij in digitalnih vsebin	5	4	2	3	4					2						3																				
-1.2	Vrednotenje podatkov, informacij in digitalnih vsebin	5	4	1								4										2	4					4									
+1.2	Vrednotenje podatkov, informacij in digitalnih vsebin	8	4	1	3	4					3	4										2	4					4									
 1.3	Upravljanje s podatki, informacijami in digitalnimi vsebinami	8	4	1				2	4													2	4			4			2	2							
 2.1	Sporazumevanje z uporabo digitalnih tehnologij	4	5	1		5	2				4																										
 2.2	Deljenje z uporabo digitalnih tehnologij	6	4										1	2			3	3					4				4										
