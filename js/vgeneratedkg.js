@@ -13,6 +13,17 @@ function myFillHeadData(csvParse) {
     if (csvParse[0][i].length < 2) csvParse[0][i] = csvParse[0][i - 1];
   }
 }
+function getBackgroundColor(value) {
+  let bgColor = "#d6eaf8"; // Default color
+  if (value === "V") {
+    bgColor = "#eafaf1";
+  } else if (value === "P") {
+    bgColor = "#fef9e7";
+  } else if (value === "N") {
+    bgColor = "#fadbd8";
+  }
+  return bgColor;
+}
 
 /**
  * Generates tables
@@ -28,14 +39,15 @@ function generateTablesByCourse(csvParse) {
       if (newTable) table += "</table>"; //ENDOld
       newTable = true;
       table += "<h2>" + current + "</h2>\n<table>\n";
-      table += "<tr><th>DK</th><th>Opis</th><th>Vključenost</th></tr>\n";
+      table += "<tr><th>DK</th><th>Opis</th><th>Vključenost2</th></tr>\n";
       console.log("Head " + current);
     }
 
     for (let j = 3; j < csvParse.length; j++) {
       // if (csvParse[j][i] > 0) {
       if (csvParse[j][i] !== 0 && csvParse[j][i] !== "") {
-        table += "<tr>";
+        let bgColor = getBackgroundColor(csvParse[j][i]);
+        table += `<tr style="background-color: ${bgColor};">`;
         //table += "<td>" + csvParse[1][i] + "</td>";
         table += "<td>" + csvParse[j][0] + "</td>";
         table += "<td>" + csvParse[j][1] + "</td>";
@@ -65,7 +77,8 @@ function generateTablesByYear(csvParse) {
     for (let j = 3; j < csvParse.length; j++) {
       //if (csvParse[j][i] > 0) {
       if (csvParse[j][i] !== 0 && csvParse[j][i] !== "") {
-        table += "<tr>";
+        let bgColor = getBackgroundColor(csvParse[j][i]);
+        table += `<tr style="background-color: ${bgColor};">`;
         tmp = csvParse[0][i];
         table += "<td>" + tmp + "</td>";
         table += "<td>" + csvParse[j][0] + "</td>";
@@ -97,7 +110,8 @@ function generateTablesByDK(csvParse) {
       //sort by y
       if (csvParse[i][j] !== 0 && csvParse[i][j] !== "") {
         //if (csvParse[i][j] > 0) {
-        table += "<tr>";
+        let bgColor = getBackgroundColor(csvParse[j][i]);
+        table += `<tr style="background-color: ${bgColor};">`;
         //table += "<td>" + csvParse[1][j] + "</td>";
         table += "<td>" + csvParse[0][j] + "</td>";
         table += "<td>" + csvParse[i][j] + "</td>";
