@@ -116,7 +116,7 @@ function generateTablesByDK(csvParse) {
         if (csvParse[1][j] == y) {
           //sort by y
           if (csvParse[i][j] !== 0 && csvParse[i][j] !== "") {
-            let bgColor = getBackgroundColor(csvParse[j][i]);
+            let bgColor = getBackgroundColor(csvParse[i][j]);
             table += `<tr style="background-color: ${bgColor};">`;
             table += "<td>" + csvParse[1][j] + "</td>";
             table += "<td>" + csvParse[0][j] + "</td>";

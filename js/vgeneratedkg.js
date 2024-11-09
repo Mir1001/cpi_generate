@@ -39,7 +39,7 @@ function generateTablesByCourse(csvParse) {
       if (newTable) table += "</table>"; //ENDOld
       newTable = true;
       table += "<h2>" + current + "</h2>\n<table>\n";
-      table += "<tr><th>DK</th><th>Opis</th><th>Vključenost2</th></tr>\n";
+      table += "<tr><th>DK</th><th>Opis</th><th>Vključenost</th></tr>\n";
       console.log("Head " + current);
     }
 
@@ -110,7 +110,7 @@ function generateTablesByDK(csvParse) {
       //sort by y
       if (csvParse[i][j] !== 0 && csvParse[i][j] !== "") {
         //if (csvParse[i][j] > 0) {
-        let bgColor = getBackgroundColor(csvParse[j][i]);
+        let bgColor = getBackgroundColor(csvParse[i][j]);
         table += `<tr style="background-color: ${bgColor};">`;
         //table += "<td>" + csvParse[1][j] + "</td>";
         table += "<td>" + csvParse[0][j] + "</td>";
