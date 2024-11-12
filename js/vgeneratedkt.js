@@ -39,7 +39,7 @@ function generateTablesByCourse(csvParse) {
       newTable = true;
       table += "<h2>" + current + "</h2>\n<table>\n";
       table +=
-        "<tr><th>Triletje</th><th>DK</th><th>Opis</th><th>Vljučenost</th></tr>\n";
+        "<tr><th>Triletje</th><th>DK</th><th>Opis</th><th>Vključenost</th></tr>\n";
       console.log("Head " + current);
     }
 
@@ -76,7 +76,7 @@ function generateTablesByYear(csvParse, year) {
   table += "<h2>" + year + ". triletje</h2>\n<table>\n";
   table += "<table>";
   table +=
-    "<tr><th>Predmet</th><th>DK</th><th>Opis</th><th>Vljučenost</th></tr>\n";
+    "<tr><th>Predmet</th><th>DK</th><th>Opis</th><th>Vključenost</th></tr>\n";
   for (let i = 4; i < csvParse[0].length; i++) {
     if (csvParse[1][i] == year) {
       current = csvParse[0][i];
@@ -110,7 +110,7 @@ function generateTablesByDK(csvParse) {
   for (let i = 3; i < csvParse.length; i++) {
     table +=
       "<h2>" + csvParse[i][0] + " - " + csvParse[i][1] + "</h2>\n<table>\n";
-    table += "<tr><th>Triletje</th><th>Predmet</th><th>Vklučenost</th></tr>\n";
+    table += "<tr><th>Triletje</th><th>Predmet</th><th>Vključenost</th></tr>\n";
     for (let y = 1; y <= 3; y++)
       for (let j = 4; j < csvParse[i].length; j++) {
         if (csvParse[1][j] == y) {
