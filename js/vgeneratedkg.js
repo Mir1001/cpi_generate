@@ -56,7 +56,11 @@ function generateTablesByCourse(csvParse) {
 
     for (let j = 3; j < csvParse.length; j++) {
       // if (csvParse[j][i] > 0) {
-      if (csvParse[j][i] !== 0 && csvParse[j][i] !== "") {
+      if (
+        csvParse[j][i] !== undefined &&
+        csvParse[j][i] !== 0 &&
+        csvParse[j][i] !== ""
+      ) {
         let bgColor = getBackgroundColor(csvParse[j][i]);
         table += `<tr ${bgColor};">`;
         //table += "<td>" + csvParse[1][i] + "</td>";
@@ -90,7 +94,11 @@ function generateTablesByYear(csvParse) {
     current = csvParse[0][i];
     for (let j = 3; j < csvParse.length; j++) {
       //if (csvParse[j][i] > 0) {
-      if (csvParse[j][i] !== 0 && csvParse[j][i] !== "") {
+      if (
+        csvParse[j][i] !== undefined &&
+        csvParse[j][i] !== 0 &&
+        csvParse[j][i] !== ""
+      ) {
         let bgColor = getBackgroundColor(csvParse[j][i]);
         table += `<tr ${bgColor};">`;
         tmp = csvParse[0][i];
