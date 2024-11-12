@@ -21,4 +21,4 @@ ID	Digitalna kompetenca	SUM	MAX	SLJ - Slovenščina 			MAT - Matematika 			TJ - 
 5.1	Reševanje tehničnih težav	0	0															N								P							P				
 5.2	Ugotavljanje potreb in opredelitev tehnoloških zadreg	0	0						P																								P				
 5.3	Ustvarjalna uporaba digitalne tehnologije	0	0																		P					P							V				
-5.4	Prepoznavanje vrzeli v digitalnih kompetencah	0	0			P			N																												
+5.4	Prepoznavanje vrzeli v digitalnih kompetencah	0	0			P			N																											
