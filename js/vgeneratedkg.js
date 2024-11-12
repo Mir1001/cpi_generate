@@ -14,16 +14,24 @@ function myFillHeadData(csvParse) {
   }
 }
 function getBackgroundColor(value) {
-  let bgColor = "#d6eaf8"; // Default color
+  let bgColor = `style="background-color:Azure"`; // Default color
   if (value === "V") {
-    bgColor = "#eafaf1";
+    bgColor = `style="background-color:Green; color:white"`;
   } else if (value === "P") {
-    bgColor = "#fef9e7";
+    bgColor = `style="background-color:Yellow; color:black"`;
   } else if (value === "N") {
-    bgColor = "#fadbd8";
+    bgColor = `style="background-color:Red; color:white"`;
   }
   return bgColor;
 }
+
+var legend = `
+<div class="legend">
+  <span style="background-color:Green; color:white">V – vključeno</span>
+  <span style="background-color:Yellow">P – pomanjkljivo (potrebno dopolniti)</span>
+  <span style="background-color:Red; color:white">N – ni vključeno (potrebno dodati)</span>
+</div>
+`;
 
 /**
  * Generates tables
@@ -36,7 +44,10 @@ function generateTablesByCourse(csvParse) {
   for (let i = 4; i < csvParse[0].length; i++) {
     if (csvParse[0][i] != current) {
       current = csvParse[0][i];
-      if (newTable) table += "</table>"; //ENDOld
+      if (newTable) {
+        table += "</table>"; //ENDOld
+        table += legend + "\n<br>";
+      }
       newTable = true;
       table += "<h2>" + current + "</h2>\n<table>\n";
       table += "<tr><th>DK</th><th>Opis</th><th>Vključenost</th></tr>\n";
@@ -47,7 +58,7 @@ function generateTablesByCourse(csvParse) {
       // if (csvParse[j][i] > 0) {
       if (csvParse[j][i] !== 0 && csvParse[j][i] !== "") {
         let bgColor = getBackgroundColor(csvParse[j][i]);
-        table += `<tr style="background-color: ${bgColor};">`;
+        table += `<tr ${bgColor};">`;
         //table += "<td>" + csvParse[1][i] + "</td>";
         table += "<td>" + csvParse[j][0] + "</td>";
         table += "<td>" + csvParse[j][1] + "</td>";
@@ -57,7 +68,10 @@ function generateTablesByCourse(csvParse) {
       }
     }
   }
-  if (newTable) table += "</table>"; //ENDOld
+  if (newTable) {
+    table += "</table>"; //ENDOld
+    table += legend + "\n<br>";
+  }
 
   return table;
 }
@@ -78,7 +92,7 @@ function generateTablesByYear(csvParse) {
       //if (csvParse[j][i] > 0) {
       if (csvParse[j][i] !== 0 && csvParse[j][i] !== "") {
         let bgColor = getBackgroundColor(csvParse[j][i]);
-        table += `<tr style="background-color: ${bgColor};">`;
+        table += `<tr ${bgColor};">`;
         tmp = csvParse[0][i];
         table += "<td>" + tmp + "</td>";
         table += "<td>" + csvParse[j][0] + "</td>";
@@ -91,6 +105,7 @@ function generateTablesByYear(csvParse) {
     //   }
   }
   table += "</table>"; //ENDOld
+  table += legend + "\n<br>";
 
   return table;
 }
@@ -111,7 +126,7 @@ function generateTablesByDK(csvParse) {
       if (csvParse[i][j] !== 0 && csvParse[i][j] !== "") {
         //if (csvParse[i][j] > 0) {
         let bgColor = getBackgroundColor(csvParse[i][j]);
-        table += `<tr style="background-color: ${bgColor};">`;
+        table += `<tr ${bgColor};">`;
         //table += "<td>" + csvParse[1][j] + "</td>";
         table += "<td>" + csvParse[0][j] + "</td>";
         table += "<td>" + csvParse[i][j] + "</td>";
@@ -120,6 +135,7 @@ function generateTablesByDK(csvParse) {
     }
     //  }
     table += "</table>\n"; //ENDOld
+    table += legend + "\n<br>";
   }
   return table;
 }

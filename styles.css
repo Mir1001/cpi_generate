@@ -8,3 +8,14 @@ th {
   text-align: left;
   min-width: 10rem;
 }
+
+.legend {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+}
+
+.legend span {
+  padding: 5px;
+  border-radius: 3px;
+}

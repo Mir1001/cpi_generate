@@ -14,16 +14,25 @@ function myFillHeadData(csvParse) {
   }
 }
 function getBackgroundColor(value) {
-  let bgColor = "#d6eaf8"; // Default color
+  let bgColor = `style="background-color:Azure"`; // Default color
   if (value === "V") {
-    bgColor = "#eafaf1";
+    bgColor = `style="background-color:Green; color:white"`;
   } else if (value === "P") {
-    bgColor = "#fef9e7";
+    bgColor = `style="background-color:Yellow; color:black"`;
   } else if (value === "N") {
-    bgColor = "#fadbd8";
+    bgColor = `style="background-color:Red; color:white"`;
   }
   return bgColor;
 }
+
+var legend = `
+<div class="legend">
+  <span style="background-color:Green; color:white">V – vključeno</span>
+  <span style="background-color:Yellow">P – pomanjkljivo (potrebno dopolniti)</span>
+  <span style="background-color:Red; color:white">N – ni vključeno (potrebno dodati)</span>
+</div>
+`;
+
 /**
  * Generates tables
  */
@@ -35,7 +44,10 @@ function generateTablesByCourse(csvParse) {
   for (let i = 4; i < csvParse[0].length; i++) {
     if (csvParse[0][i] != current) {
       current = csvParse[0][i];
-      if (newTable) table += "</table>"; //ENDOld
+      if (newTable) {
+        table += "</table>"; //ENDOld
+        table += legend + "\n<br>";
+      }
       newTable = true;
       table += "<h2>" + current + "</h2>\n<table>\n";
       table +=
@@ -47,13 +59,13 @@ function generateTablesByCourse(csvParse) {
       if (
         // csvParse[i] !== undefined &&
         // csvParse[j] !== undefined &&
-        // csvParse[j][i] !== undefined &&
+        csvParse[j][i] !== undefined &&
         // csvParse[i][j] !== undefined &&
         csvParse[j][i] !== 0 &&
         csvParse[j][i] !== ""
       ) {
         let bgColor = getBackgroundColor(csvParse[j][i]);
-        table += `<tr style="background-color: ${bgColor};">`;
+        table += `<tr ${bgColor};">`;
         table += "<td>" + csvParse[1][i] + "</td>";
         table += "<td>" + csvParse[j][0] + "</td>";
         table += "<td>" + csvParse[j][1] + "</td>";
@@ -63,7 +75,10 @@ function generateTablesByCourse(csvParse) {
       }
     }
   }
-  if (newTable) table += "</table>"; //ENDOld
+  if (newTable) {
+    table += "</table>"; //ENDOld
+    table += legend + "\n<br>";
+  }
 
   return table;
 }
@@ -81,9 +96,13 @@ function generateTablesByYear(csvParse, year) {
     if (csvParse[1][i] == year) {
       current = csvParse[0][i];
       for (let j = 3; j < csvParse.length; j++) {
-        if (csvParse[j][i] !== 0 && csvParse[j][i] !== "") {
+        if (
+          csvParse[j][i] !== undefined &&
+          csvParse[j][i] !== 0 &&
+          csvParse[j][i] !== ""
+        ) {
           let bgColor = getBackgroundColor(csvParse[j][i]);
-          table += `<tr style="background-color: ${bgColor};">`;
+          table += `<tr ${bgColor};">`;
           tmp = csvParse[0][i];
           table += "<td>" + tmp + "</td>";
           table += "<td>" + csvParse[j][0] + "</td>";
@@ -96,6 +115,7 @@ function generateTablesByYear(csvParse, year) {
     }
   }
   table += "</table>"; //ENDOld
+  table += legend + "\n<br>";
 
   return table;
 }
@@ -108,6 +128,7 @@ function generateTablesByDK(csvParse) {
   let current = "";
   let newTable = false;
   for (let i = 3; i < csvParse.length; i++) {
+    if (csvParse[i].length < 2) continue;
     table +=
       "<h2>" + csvParse[i][0] + " - " + csvParse[i][1] + "</h2>\n<table>\n";
     table += "<tr><th>Triletje</th><th>Predmet</th><th>Vključenost</th></tr>\n";
@@ -117,7 +138,7 @@ function generateTablesByDK(csvParse) {
           //sort by y
           if (csvParse[i][j] !== 0 && csvParse[i][j] !== "") {
             let bgColor = getBackgroundColor(csvParse[i][j]);
-            table += `<tr style="background-color: ${bgColor};">`;
+            table += `<tr ${bgColor};">`;
             table += "<td>" + csvParse[1][j] + "</td>";
             table += "<td>" + csvParse[0][j] + "</td>";
             table += "<td>" + csvParse[i][j] + "</td>";
@@ -126,7 +147,9 @@ function generateTablesByDK(csvParse) {
         }
       }
     table += "</table>\n"; //ENDOld
+    table += legend + "\n<br>";
   }
+
   return table;
 }
 
