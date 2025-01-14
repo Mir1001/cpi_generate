@@ -26,3 +26,4 @@ Osnova je preglednica.
 
 - Za OŠ skopiraj vrstice v `vdkt.txt`.
 - Za gimnazije skopiraj vrstice v `vdkg.txt`.
+- Za poklicne in strokovne šole skopiraj vrstice v `vdkps.txt`.

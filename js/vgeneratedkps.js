@@ -41,7 +41,7 @@ function generateTablesByCourse(csvParse) {
   var table = "";
   let current = "";
   let newTable = false;
-  for (let i = 3; i < csvParse[0].length; i++) {
+  for (let i = 4; i < csvParse[0].length; i++) {
     if (csvParse[0][i] != current) {
       current = csvParse[0][i];
       if (newTable) {
@@ -54,7 +54,7 @@ function generateTablesByCourse(csvParse) {
       console.log("Head " + current);
     }
 
-    for (let j = 3; j < csvParse.length; j++) {
+    for (let j = 2; j < csvParse.length; j++) {
       // if (csvParse[j][i] > 0) {
       if (
         csvParse[j][i] !== undefined &&
@@ -123,7 +123,7 @@ function generateTablesByDK(csvParse) {
   var table = "";
   let current = "";
   let newTable = false;
-  for (let i = 3; i < csvParse.length; i++) {
+  for (let i = 2; i < csvParse.length; i++) {
     table +=
       "<h2>" + csvParse[i][0] + " - " + csvParse[i][1] + "</h2>\n<table>\n";
     table += "<tr><th>Predmet</th><th>Vključenost</th></tr>\n";
@@ -145,6 +145,7 @@ function generateTablesByDK(csvParse) {
     table += "</table>\n"; //ENDOld
     table += legend + "\n<br>";
   }
+  console.log(table);
   return table;
 }
 
