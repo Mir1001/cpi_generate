@@ -7,17 +7,17 @@ ID	Digitalna kompetenca	SUM	MAX	SLJ - Slovenščina 			MAT - Matematika 			TJ - 
 2.1	Interakcija z uporabo digitalnih tehnologij	0	0	V	V	V				V	V	V	V	N	V	V	V							V	V																		
 2.2	Deljenje z uporabo digitalnih tehnologij	0	0															V	V			V	V		V				V				V										
 2.3	Državljansko udejstvovanje z uporabo digitalnih tehnologij	0	0			V																		V						V													
-2.4	Sodelovanje z uporabo digitalnih tehnologij	0	0		V	V		V	V			V			N										V					V					V	V							
-2.5	Spletni bonton	0	0	V	V	V						V			V		V								V						V												
+2.4	Sodelovanje z uporabo digitalnih tehnologij	0	0		V	V		V	V			V													V					V					V	V							
+2.5	Spletni bonton	0	0	V	V	V						V					V								V						V												
 2.6	Upravljanje digitalne identitete	0	0		V	V				V			V												V	V	V																
-3.1	Razvoj digitalnih vsebin	0	0	V	V	V												V	V			V	V		V				V				V										
+3.1	Razvoj digitalnih vsebin	0	0	V	V	V												V	V			V	V		V				V				V	V									
 3.2	Umeščanje in poustvarjanje digitalnih vsebin	0	0	V		V												V		V			V		V			V					V										
 3.3	Avtorske pravice in licence	0	0	V	V	V										V		V		V				V	V								V										
 3.4	Programiranje	0	0				V																		V														V				
 4.1	Skrb za varnost naprav	0	0																					V													V	V	V				
 4.2	Varovanje osebnih podatkov in zasebnosti	0	0																		V				V															V			V
-4.3	Skrb za zdravje in dobrobit	0	0														V				V			V	V												V			N	V	V	V
-4.4	Varstvo okolja	0	0																								V						V	N	V		V						
+4.3	Skrb za zdravje in dobrobit	0	0														V				V			V	V									V			V			V	V	V	V
+4.4	Varstvo okolja	0	0																								V						V	V	V		V						
 5.1	Reševanje tehničnih težav	0	0																				V		V							V							V				
 5.2	Ugotavljanje potreb in opredelitev tehnoloških zadreg	0	0		V	V		V	V																														V				
 5.3	Ustvarjalna uporaba digitalne tehnologije	0	0						V																		V					V							V				
